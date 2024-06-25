@@ -1,0 +1,15 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+@media (max-width: 768px){
+    .sm-hide {
+        display: none;
+    }
+}
+@media (min-width: 769px){
+    .lg-hide{
+        display: none;
+    }
+}

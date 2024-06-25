@@ -1,0 +1,12 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+@media (max-width: 768px){
+    .imgNoticias {
+        display: none;
+    }
+}
