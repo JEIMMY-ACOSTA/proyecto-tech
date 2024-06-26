@@ -14,14 +14,22 @@ import Usuarios from './componentes/usuarios/usuarios'
 import CreateNew from './componentes/usuarios/createNew'
 import Asistencia from './componentes/usuarios/asistencia';
 import EditUser from './componentes/usuarios/editarUsuario'
+import Login from './componentes/login/login';
+import Notas from './componentes/usuarios/notas';
+import EditarNotas from './componentes/usuarios/editarNota'
 
 
 const router=createBrowserRouter(
   [
     {
       //Elemento home estara en esta dirección "/"
-      path: "/", //Ubicación del archivo o componente
-      element: <Inicio/> //llamamos el componente
+      path: "/",
+      element: <Login/> //llamamos el componente
+    },
+    
+    {
+      path: "/inicio", //Ubicación del archivo o componente
+      element: <Inicio/>
     },
 
     {
@@ -47,6 +55,16 @@ const router=createBrowserRouter(
     {
       path: "/EditUser",
       element: <EditUser/>
+    },
+
+    {
+      path: "/notas",
+      element: <Notas/>
+    },
+
+    {
+      path: "/EditarNotas",
+      element: <EditarNotas/>
     },
 
   ]

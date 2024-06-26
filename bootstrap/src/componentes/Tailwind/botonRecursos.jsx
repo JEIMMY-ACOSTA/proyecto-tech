@@ -83,25 +83,6 @@ export default function BotonRecursos() {
           </button>
         </div>
       </div>
-      <div className="flex flex-row">
-          <div className="flex flex-col justify-center text-center items-center ">
-            <span
-              class="material-symbols-outlined"
-              style={{ color: "#dc2626", fontSize: "25px" }}
-            >
-              group
-            </span>
-          </div>
-          <div className="flex flex-col justify-center">
-            <Link
-              type="button"
-              className="btn btn-outline-none font-semibold underline"
-              to={"/asistencia"}
-            >
-              <strong className="underline text-red-600">Asistencia</strong>
-            </Link>
-          </div>
-          </div>
     </>
   );
 }

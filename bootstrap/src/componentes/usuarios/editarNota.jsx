@@ -23,7 +23,7 @@ import BotoneSec2 from "../Tailwind/botoneSec2";
 import BotonSec3 from "../Tailwind/botonSec3";
 import BotonAdmin from "../Tailwind/botonAdmin";
 
-function EditUser() {
+function EditarNotas() {
   //! ESTUIAR!!
   const [navbarhidestatus, changenavbarhidestatus] = useState(true);
   useEffect(() => {
@@ -96,7 +96,7 @@ function EditUser() {
           <Row>
             <Col>
               <div class="container-fluid py-4 border rounded-3">
-                <h4>Editar usuario</h4>
+                <h4>Editar notas</h4>
                 <br />
                 <form>
                   <input id="id" name="id" value="1" hidden />
@@ -106,14 +106,16 @@ function EditUser() {
                         class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                         for="grid-city"
                       >
-                        Nombres
+                        Nota 1
                       </label>
                       <input
                         class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                        id="grid-city"
-                        type="text"
-                        placeholder="EJ. Tatiana"
+                        id="Nota_1"
+                        type="number"
+                        placeholder="Nota de 0 a 5"
                         required
+                        min="0"
+                        max="5"
                       />
                     </div>
                     <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
@@ -121,14 +123,16 @@ function EditUser() {
                         class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                         for="grid-city"
                       >
-                        Apellidos
+                        Nota 2
                       </label>
                       <input
                         class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                        id="grid-city"
-                        type="text"
-                        placeholder="EJ. González González"
+                        id="Nota_2"
+                        type="number"
+                        placeholder="Nota de 0 a 5"
                         required
+                        min="0"
+                        max="5"
                       />
                     </div>
                     <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
@@ -136,81 +140,35 @@ function EditUser() {
                         class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                         for="grid-zip"
                       >
-                        Cédula
+                        Nota 3
                       </label>
                       <input
                         class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                        id="grid-zip"
+                        id="Nota_1"
                         type="number"
-                        placeholder="1000 000 0"
+                        placeholder="Nota de 0 a 5"
+                      
+                        required
+                        min="0"
+                        max="5"
                       />
                     </div>
                   </div>
-                  <div class="flex flex-wrap -mx-3 mb-2">
-                    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                      <label
-                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                        for="grid-state"
-                      >
-                        Rol
-                      </label>
-                      <div class="relative">
-                        <select
-                          class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                          id="grid-state"
-                        >
-                          <option>Estudiante</option>
-                          <option>Docente</option>
-                          <option>Admin</option>
-                        </select>
-                      </div>
-                    </div>
-
-                    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                      <label
-                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                        for="grid-city"
-                      >
-                        Correo
-                      </label>
-                      <input
-                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                        id="grid-city"
-                        type="email"
-                        placeholder="EJ. example@gmail.com"
-                        required
-                      />
-                    </div>
-                    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                      <label
-                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                        for="grid-zip"
-                      >
-                        Telefono
-                      </label>
-                      <input
-                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                        id="grid-zip"
-                        type="number"
-                        placeholder="31122222"
-                      />
-                    </div>
-                    <div class="inline-flex mt-4 mx-2">
-                      <Link
-                        type="button"
-                        className="bg-cyan-500 text-white font-regular py-2 px-3  rounded hover:scale-95 justify-center no-underline mx-2"
-                        to={"/usuarios"}
-                      >
-                        Agregar
-                      </Link>
-                      <Link
-                        type="button"
-                        className="bg-red-700 text-white font-regular py-2 px-3  rounded hover:scale-95 no-underline"
-                        to={"/usuarios"}
-                      >
-                        Cancelar
-                      </Link>
-                    </div>
+                  <div class="inline-flex mt-4 mx-2">
+                    <Link
+                      type="button"
+                      className="bg-cyan-500 text-white font-regular py-2 px-3  rounded hover:scale-95 justify-center no-underline mx-2"
+                      to={"/usuarios"}
+                    >
+                      Subir
+                    </Link>
+                    <Link
+                      type="button"
+                      className="bg-red-700 text-white font-regular py-2 px-3  rounded hover:scale-95 no-underline"
+                      to={"/notas"}
+                    >
+                      Cancelar
+                    </Link>
                   </div>
                 </form>
               </div>
@@ -229,4 +187,4 @@ function EditUser() {
   );
 }
 
-export default EditUser;
+export default EditarNotas;

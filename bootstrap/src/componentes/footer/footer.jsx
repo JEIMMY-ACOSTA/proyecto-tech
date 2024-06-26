@@ -42,9 +42,6 @@ function Footer() {
             <br/>
             <strong>Número de seguimiento: </strong>
             +57 310 7699174
-            <br />
-            <strong>Creadora :3: Dina Lamilla</strong>
-            <br />
           </p>
           </Col>
         </Row>

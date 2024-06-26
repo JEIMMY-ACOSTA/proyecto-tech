@@ -25,6 +25,7 @@ import BotonBootcamp from "./Tailwind/botonBootcamp";
 import BotoneSec2 from "./Tailwind/botoneSec2";
 import BotonSec3 from "./Tailwind/botonSec3";
 import BotonRecursos from "./Tailwind/botonRecursos";
+import BotonAdmin from "./Tailwind/botonAdmin";
 
 function Cuerpo() {
   //! ESTUIAR!!
@@ -68,6 +69,11 @@ function Cuerpo() {
                 {/*Cuerpo menú 4 parte*/}
                 <ListGroup.Item>
                   <BotonSec3 />
+                </ListGroup.Item>
+
+                {/*Cuerpo menú 4 parte*/}
+                <ListGroup.Item>
+                  <BotonAdmin />
                 </ListGroup.Item>
               </ListGroup>
             </Card.Body>

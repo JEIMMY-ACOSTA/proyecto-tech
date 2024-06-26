@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 export default function BotonSec3() {
   return (
@@ -36,25 +35,6 @@ export default function BotonSec3() {
         </div>
       </div>
 
-      <br />
-      <br />
-
-      <div class="inline-flex">
-          <Link
-            type="button"
-            className="bg-cyan-500 text-white font-regular py-2 px-3  rounded hover:scale-95 justify-center no-underline mx-2"
-            to={"/usuarios"}
-          >
-            Usuarios
-          </Link>
-          <Link
-            type="button"
-            className="bg-red-700 text-white font-regular py-2 px-3  rounded hover:scale-95 no-underline"
-            to={"/"}
-          >
-            Cerrar Sesión
-          </Link>
-      </div>
     </>
   );
 }

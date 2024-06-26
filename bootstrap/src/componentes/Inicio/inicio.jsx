@@ -28,6 +28,7 @@ import BotonInicio from "../Tailwind/botonInicio";
 import BotonBootcamp from "../Tailwind/botonBootcamp";
 import BotoneSec2 from "../Tailwind/botoneSec2";
 import BotonSec3 from "../Tailwind/botonSec3";
+import BotonAdmin from "../Tailwind/botonAdmin";
 
 
 function Inicio() {
@@ -73,6 +74,11 @@ function Inicio() {
                 {/*Cuerpo menú 3 parte*/}
                 <ListGroup.Item>
                   <BotonSec3 />
+                </ListGroup.Item>
+
+                {/*Cuerpo menú 4 parte*/}
+                <ListGroup.Item>
+                  <BotonAdmin />
                 </ListGroup.Item>
                 
               </ListGroup>

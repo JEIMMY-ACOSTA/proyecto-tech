@@ -16,7 +16,7 @@ export default function BotonBootcamp() {
         <Link
           type="button"
           className="btn btn-outline-none font-semibold"
-          to={"/"}
+          to={"/inicio"}
         >
           Bootcamps
         </Link>

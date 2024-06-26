@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import "./usuarios.css";
 
 //Creamos el componente
@@ -21,6 +22,7 @@ import BotonInicio from "../Tailwind/botonInicio";
 import BotonBootcamp from "../Tailwind/botonBootcamp";
 import BotoneSec2 from "../Tailwind/botoneSec2";
 import BotonSec3 from "../Tailwind/botonSec3";
+import BotonAdmin from "../Tailwind/botonAdmin";
 
 function CreateNew() {
   //! ESTUIAR!!
@@ -65,6 +67,11 @@ function CreateNew() {
                 <ListGroup.Item>
                   <BotonSec3 />
                 </ListGroup.Item>
+
+                {/*Cuerpo menú 4 parte*/}
+                <ListGroup.Item>
+                  <BotonAdmin />
+                </ListGroup.Item>
               </ListGroup>
             </Card.Body>
           </Card>
@@ -89,121 +96,124 @@ function CreateNew() {
           {/*Contenido Formulario*/}
           <Row>
             <Col>
-            <div class="container-fluid py-4 border rounded-3">
-                <h4>Agregar usuario</h4><br/>
-            <form>
-            <input id="id" name="id" value="1" hidden/>
-              <div class="flex flex-wrap -mx-3 mb-2">
-                <div class="w-full md:w-1/3 px-3 mb-6 md:mb-5">
-                  <label
-                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                    for="grid-city"
-                  >
-                    Nombres
-                  </label>
-                  <input
-                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="grid-city"
-                    type="text"
-                    placeholder="EJ. Tatiana"
-                    required
-                  />
-                </div>
-                <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                  <label
-                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                    for="grid-city"
-                  >
-                    Apellidos
-                  </label>
-                  <input
-                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="grid-city"
-                    type="text"
-                    placeholder="EJ. González González"
-                    required
-                  />
-                </div>
-                <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                  <label
-                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                    for="grid-zip"
-                  >
-                    Cédula
-                  </label>
-                  <input
-                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="grid-zip"
-                    type="number"
-                    placeholder="1000 000 0"
-                  />
-                </div>
+              <div class="container-fluid py-4 border rounded-3">
+                <h4>Agregar usuario</h4>
+                <br />
+                <form>
+                  <input id="id" name="id" value="1" hidden />
+                  <div class="flex flex-wrap -mx-3 mb-2">
+                    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-5">
+                      <label
+                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                        for="grid-city"
+                      >
+                        Nombres
+                      </label>
+                      <input
+                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                        id="grid-city"
+                        type="text"
+                        placeholder="EJ. Tatiana"
+                        required
+                      />
+                    </div>
+                    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                      <label
+                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                        for="grid-city"
+                      >
+                        Apellidos
+                      </label>
+                      <input
+                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                        id="grid-city"
+                        type="text"
+                        placeholder="EJ. González González"
+                        required
+                      />
+                    </div>
+                    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                      <label
+                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                        for="grid-zip"
+                      >
+                        Cédula
+                      </label>
+                      <input
+                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                        id="grid-zip"
+                        type="number"
+                        placeholder="1000 000 0"
+                      />
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap -mx-3 mb-2">
+                    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                      <label
+                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                        for="grid-city"
+                      >
+                        Correo
+                      </label>
+                      <input
+                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                        id="grid-city"
+                        type="email"
+                        placeholder="EJ. example@gmail.com"
+                        required
+                      />
+                    </div>
+                    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                      <label
+                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                        for="grid-state"
+                      >
+                        Rol
+                      </label>
+                      <div class="relative">
+                        <select
+                          class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                          id="grid-state"
+                        >
+                          <option>Estudiante</option>
+                          <option>Docente</option>
+                          <option>Admin</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                      <label
+                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                        for="grid-zip"
+                      >
+                        Telefono
+                      </label>
+                      <input
+                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                        id="grid-zip"
+                        type="number"
+                        placeholder="31122222"
+                      />
+                    </div>
+                    <div class="inline-flex mt-4 mx-2">
+                      <Link
+                        type="button"
+                        className="bg-cyan-500 text-white font-regular py-2 px-3  rounded hover:scale-95 justify-center no-underline mx-2"
+                        to={"/usuarios"}
+                      >
+                        Agregar
+                      </Link>
+                      <Link
+                        type="button"
+                        className="bg-red-700 text-white font-regular py-2 px-3  rounded hover:scale-95 no-underline"
+                        to={"/usuarios"}
+                      >
+                        Cancelar
+                      </Link>
+                    </div>
+                  </div>
+                </form>
               </div>
-              <div class="flex flex-wrap -mx-3 mb-2">
-                <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                  <label
-                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                    for="grid-city"
-                  >
-                    Rol
-                  </label>
-                  <input
-                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="Ciudad"
-                    type="text"
-                    placeholder="EJ Estudiante. "
-                    required
-                  />
-                </div>
-
-                <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                  <label
-                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                    for="grid-city"
-                  >
-                    Correo
-                  </label>
-                  <input
-                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="grid-city"
-                    type="email"
-                    placeholder="EJ. example@gmail.com"
-                    required
-                  />
-                </div>
-                <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                  <label
-                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                    for="grid-zip"
-                  >
-                    Telefono
-                  </label>
-                  <input
-                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="grid-zip"
-                    type="number"
-                    placeholder="31122222"
-                  />
-                </div>
-                <div class="inline-flex mt-4 mx-2">
-                  <Link
-                    type="button"
-                    className="bg-cyan-500 text-white font-regular py-2 px-3  rounded hover:scale-95 justify-center no-underline mx-2"
-                    to={"/usuarios"}
-                  >
-                    Agregar
-                  </Link>
-                  <Link
-                    type="button"
-                    className="bg-red-700 text-white font-regular py-2 px-3  rounded hover:scale-95 no-underline"
-                    to={"/usuarios"}
-                  >
-                    Cancelar
-                  </Link>
-                </div>
-              </div>
-            </form>
-            </div>
             </Col>
           </Row>
         </Col>

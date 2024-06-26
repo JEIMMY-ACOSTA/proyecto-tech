@@ -23,7 +23,7 @@ import BotoneSec2 from "../Tailwind/botoneSec2";
 import BotonSec3 from "../Tailwind/botonSec3";
 import BotonAdmin from "../Tailwind/botonAdmin";
 
-function Usuarios() {
+function Notas() {
   //! ESTUIAR!!
   const [navbarhidestatus, changenavbarhidestatus] = useState(true);
   useEffect(() => {
@@ -66,7 +66,6 @@ function Usuarios() {
                 <ListGroup.Item>
                   <BotonSec3 />
                 </ListGroup.Item>
-
                 {/*Cuerpo ADMIN*/}
                 <ListGroup.Item>
                   <BotonAdmin />
@@ -98,44 +97,35 @@ function Usuarios() {
             <Col class="fluid">
               <div class="container-xl">
                 <div class=" mb-4">
-                  <h4>Usuarios</h4>
-                  <Link
-                    type="button"
-                    className="btn btn-primary font-regular py-2  rounded hover:scale-95"
-                    to={"/create"}
-                  >
-                    Crear nuevo usuario
-                  </Link>
+                  <h4>Caificaciones</h4>
                 </div>
                 <table class="table table-light table-hover table-bordered">
                   <thead>
                     <tr class="table-primary">
-                      <th scope="col">ID</th>
-                      <th scope="col">Rol</th>
-                      <th scope="col">Cédula</th>
                       <th scope="col">Nombres</th>
                       <th scope="col">Apellidos</th>
-                      <th scope="col">Correo</th>
-                      <th scope="col">Telefono</th>
+                      <th scope="col">Nota1</th>
+                      <th scope="col">Nota2</th>
+                      <th scope="col">Nota3</th>
+                      <th scope="col">Nota final</th>
                       <th scope="col">Acciones</th>
                     </tr>
                   </thead>
 
                   <tbody>
                     <tr>
-                      <td>1</td>
-                      <td>Estudiante</td>
-                      <td>00000000</td>
                       <td>Dina</td>
                       <td>Lamilla González</td>
-                      <td>example@gmail.com</td>
-                      <td>3114200</td>
+                      <td>2,5</td>
+                      <td>3,2</td>
+                      <td>5</td>
+                      <td>5</td>
                       <td>
                         <div class="inline-flex">
                           <Link
                             type="button"
                             className="btn btn-outline-primary font-regular py-2 px-3  rounded hover:scale-95 justify-center no-underline mx-2"
-                            to={"/EditUser"}
+                            to={"/EditarNotas"}
                           >
                             Editar
                           </Link>
@@ -150,19 +140,18 @@ function Usuarios() {
                       </td>
                     </tr>
                     <tr>
-                      <td>1</td>
-                      <td>Estudiante</td>
-                      <td>00000000</td>
                       <td>Luis</td>
                       <td>González González</td>
-                      <td>example@gmail.com</td>
-                      <td>3114200</td>
+                      <td>3,6</td>
+                      <td>5</td>
+                      <td>4</td>
+                      <td>4</td>
                       <td>
                         <div class="inline-flex">
                           <Link
                             type="button"
                             className="btn btn-outline-primary font-regular py-2 px-3  rounded hover:scale-95 justify-center no-underline mx-2"
-                            to={"/create"}
+                            to={"/EditarNotas"}
                           >
                             Editar
                           </Link>
@@ -170,7 +159,7 @@ function Usuarios() {
                             type="button"
                             className="btn btn-outline-danger font-regular py-2 px-3  rounded hover:scale-95 no-underline"
                             to={"/"}
-                          > 
+                          >
                             Eliminar
                           </Link>
                         </div>
@@ -180,14 +169,13 @@ function Usuarios() {
                 </table>
                 <br />
                 <Link
-                    type="button"
-                    className="btn btn-outline-danger font-regular py-2 px-3   rounded hover:scale-95 no-underline"
-                    to={"/Cuerpo"}
-                  >
-                    Volver
-                  </Link>
+                  type="button"
+                  className="btn btn-outline-danger font-regular py-2 px-3   rounded hover:scale-95 no-underline"
+                  to={"/Cuerpo"}
+                >
+                  Volver
+                </Link>
               </div>
-              
             </Col>
           </Row>
         </Col>
@@ -203,4 +191,4 @@ function Usuarios() {
   );
 }
 
-export default Usuarios;
+export default Notas;
