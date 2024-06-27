@@ -28,7 +28,7 @@ import BotonRecursos from "./Tailwind/botonRecursos";
 import BotonAdmin from "./Tailwind/botonAdmin";
 
 function Cuerpo() {
-  //! ESTUIAR!!
+  //! FUNCIÓN PARA OCULTAR EL MENU!!
   const [navbarhidestatus, changenavbarhidestatus] = useState(true);
   useEffect(() => {
     const navbar = document.getElementById("navbar");
@@ -49,29 +49,29 @@ function Cuerpo() {
           <Card style={{ width: "100%", height: "100%" }} className="text-left">
             <Card.Body>
               <ListGroup variant="flush">
-                {/*Nombre e icono*/}
+                {/*LLama componente de usuario*/}
                 <ListGroup.Item>
                   <Card.Title>
                     <BotonInicio />
                   </Card.Title>
                 </ListGroup.Item>
 
-                {/*Cuerpo menú Inicio(Eliminado), bootcamps*/}
+                {/*Cuerpo menú bootcamps*/}
                 <ListGroup.Item>
                   <BotonBootcamp />
                 </ListGroup.Item>
 
-                {/*Cuerpo menú 3 parte*/}
+                {/*Cuerpo menú 3 parte (Hackathos..*/}
                 <ListGroup.Item>
                   <BotoneSec2 />
                 </ListGroup.Item>
 
-                {/*Cuerpo menú 4 parte*/}
+                {/*Cuerpo menú 4 parte Manual de usuario y preguntas "llamamos componente"*/}
                 <ListGroup.Item>
                   <BotonSec3 />
                 </ListGroup.Item>
 
-                {/*Cuerpo menú 4 parte*/}
+                {/*Cuerpo menú PARTE DE ADMIN*/}
                 <ListGroup.Item>
                   <BotonAdmin />
                 </ListGroup.Item>
@@ -80,14 +80,14 @@ function Cuerpo() {
           </Card>
         </Col>
 
-        {/*Parte DER Menú*/}
+        {/*Parte CENTRO PAG*/}
         <Col class="col">
           {/*Banner y boton*/}
           <Col>
             <Banner />
             <br />
 
-            {/**! ESTUIAR!! */}
+            {/**! CONTINUACIÓN DE LA FUNCIÓN PARA OCULTAR EL MENU (eSTÁ EN ROJO ARRIBA)!! */}
             <Button
               onClick={() => changenavbarhidestatus(!navbarhidestatus)}
               className="lg-hide"
@@ -99,13 +99,16 @@ function Cuerpo() {
           {/*Contenido sesiones Y botones material de clase..*/}
           <Row>
             <br />
-            {/*Sesiones virtuales*/}
+            {/*card de Sesiones virtuales*/}
             <Col md={8}>
               <h3>Desarrollo Web Full Stack</h3>
+
+              {/*BOTÓN ACCERDER A PAG SESIONES */}
+
               <p>Desarrollo del bootcamp:</p>
               <div className="acordeon">
                 <Accordion flush>
-                  {/**! ESTUIAR!! */}
+                  {/**! ESTAMOS RECORRIENDO UN ARRIVE (ESTE SE ENCUENTRA EN GLOBAL)!! */}
                   {classInfo.map((info, index) => {
                     return (
                       <>
@@ -118,9 +121,9 @@ function Cuerpo() {
               </div>
             </Col>
 
-            {/*Contenidos*/}
+            {/*Contenidos PARTE DERECHA (TICKET....)*/}
             <Col>
-              {/*Barra de progreso*/}
+              {/*Barra de progreso (COMPONENTE BARRA)*/}
               <Card style={{ width: "100%" }} className="text-left">
                 <Card.Body>
                   <ListGroup variant="flush">

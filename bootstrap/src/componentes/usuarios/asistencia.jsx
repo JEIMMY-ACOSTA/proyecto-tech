@@ -179,7 +179,6 @@ function Asistencia() {
                       <td>No asistio</td>
                     </tr>
                   </tbody>
-
                   <Link
                     type="button"
                     className="btn btn-outline-danger font-regular py-2 px-3 mt-5  rounded hover:scale-95 no-underline"

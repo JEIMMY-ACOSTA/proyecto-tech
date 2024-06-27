@@ -22,7 +22,7 @@ import EditarNotas from './componentes/usuarios/editarNota'
 const router=createBrowserRouter(
   [
     {
-      //Elemento home estara en esta dirección "/"
+      //Elemento LOGIN estara en esta dirección "/"
       path: "/",
       element: <Login/> //llamamos el componente
     },
