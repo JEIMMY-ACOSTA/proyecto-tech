@@ -98,7 +98,6 @@ function Asistencia() {
                   <thead>
                     <tr class="table-primary">
                       <th scope="col">Nombres</th>
-                      <th scope="col">Apellidos</th>
                       <th scope="col">Fecha</th>
                       <th scope="col">Hora</th>
                       <th scope="col">Estado</th>
@@ -108,14 +107,12 @@ function Asistencia() {
                   <tbody>
                     <tr>
                       <td>Dina</td>
-                      <td>Lamilla González</td>
                       <td>25/06/2024</td>
                       <td>06:55</td>
                       <td>Asistente</td>
                     </tr>
                     <tr>
                       <td>Luis</td>
-                      <td>González González</td>
                       <td>25/06/2024</td>
                       <td>06:55</td>
                       <td>No asistio</td>
@@ -135,7 +132,6 @@ function Asistencia() {
                   <thead>
                     <tr class="table-primary">
                       <th scope="col">Nombres</th>
-                      <th scope="col">Apellidos</th>
                       <th scope="col">Fecha</th>
                       <th scope="col">Hora</th>
                       <th scope="col">Estado</th>
@@ -145,7 +141,6 @@ function Asistencia() {
                   <tbody>
                     <tr>
                       <td>Dina</td>
-                      <td>Lamilla González</td>
                       <td>25/06/2024</td>
                       <td>06:55</td>
                       <td>Asistente</td>
@@ -163,7 +158,6 @@ function Asistencia() {
                   <thead>
                     <tr class="table-primary">
                       <th scope="col">Nombres</th>
-                      <th scope="col">Apellidos</th>
                       <th scope="col">Fecha</th>
                       <th scope="col">Hora</th>
                       <th scope="col">Estado</th>
@@ -173,7 +167,6 @@ function Asistencia() {
                   <tbody>
                     <tr>
                       <td>Luis</td>
-                      <td>González González</td>
                       <td>25/06/2024</td>
                       <td>06:55</td>
                       <td>No asistio</td>

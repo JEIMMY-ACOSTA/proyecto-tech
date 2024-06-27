@@ -103,7 +103,11 @@ function Cuerpo() {
             <Col md={8}>
               <h3>Desarrollo Web Full Stack</h3>
 
-              {/*BOTÓN ACCERDER A PAG SESIONES */}
+              <Link type="button"
+                    className="btn btn-outline-danger font-regular py-2 px-3 mt-5  rounded hover:scale-95 no-underline"
+                    to={"/Sesiones"}>
+                    Sesiones
+              </Link>  
 
               <p>Desarrollo del bootcamp:</p>
               <div className="acordeon">

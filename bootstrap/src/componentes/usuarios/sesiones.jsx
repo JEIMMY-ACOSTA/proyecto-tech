@@ -23,7 +23,7 @@ import BotoneSec2 from "../Tailwind/botoneSec2";
 import BotonSec3 from "../Tailwind/botonSec3";
 import BotonAdmin from "../Tailwind/botonAdmin";
 
-function Usuarios() {
+function Sesiones() {
   //! ESTUIAR!!
   const [navbarhidestatus, changenavbarhidestatus] = useState(true);
   useEffect(() => {
@@ -102,21 +102,23 @@ function Usuarios() {
                   <Link
                     type="button"
                     className="btn btn-primary font-regular py-2  rounded hover:scale-95"
-                    to={"/create"}
+                    to={"/EditarSesiones"}
                   >
-                    Crear nuevo usuario
+                    Crear nueva sesión
                   </Link>
                 </div>
                 <table class="table table-light table-hover table-bordered">
                   <thead>
                     <tr class="table-primary">
                       <th scope="col">ID</th>
-                      <th scope="col">Rol</th>
-                      <th scope="col">Documento</th>
-                      <th scope="col">Nombres</th>
-                      <th scope="col">Correo</th>
-                      <th scope="col">Telefono</th>
-                      <th scope="col">Contraseña</th>
+                      <th scope="col">Numero de sesiones</th>
+                      <th scope="col">Fecha</th>
+                      <th scope="col">Componente</th>
+                      <th scope="col">Horario</th>
+                      <th scope="col">Estado</th>
+                      <th scope="col">Curso</th>
+                      <th scope="col">Nivel</th>
+                      <th scope="col">Link</th>
                       <th scope="col">Acciones</th>
                     </tr>
                   </thead>
@@ -124,18 +126,28 @@ function Usuarios() {
                   <tbody>
                     <tr>
                       <td>1</td>
-                      <td>Estudiante</td>
-                      <td>00000000</td>
-                      <td>Dina</td>
-                      <td>example@gmail.com</td>
-                      <td>3114200</td>
-                      <td>123455</td>
+                      <td>1</td>
+                      <td>27/06/2024</td>
+                      <td>Componente Tecnico </td>
+                      <td>Diurno</td>
+                      <td>Activo</td>
+                      <td>Desarrollo full stack</td>
+                      <td>Intermedio</td>
+                      <td>
+                        <Link
+                            type="button"
+                            className="btn btn-outline-primary font-regular py-2 px-3  rounded hover:scale-95 justify-center no-underline mx-2"
+                            to={"/"}
+                          >
+                            Link
+                          </Link>
+                      </td>
                       <td>
                         <div class="inline-flex">
                           <Link
                             type="button"
                             className="btn btn-outline-primary font-regular py-2 px-3  rounded hover:scale-95 justify-center no-underline mx-2"
-                            to={"/EditUser"}
+                            to={"/EditarSesiones"}
                           >
                             Editar
                           </Link>
@@ -151,18 +163,28 @@ function Usuarios() {
                     </tr>
                     <tr>
                       <td>1</td>
-                      <td>Estudiante</td>
-                      <td>00000000</td>
-                      <td>Luis</td>
-                      <td>example@gmail.com</td>
-                      <td>3114200</td>
-                      <td>123456</td>
+                      <td>1</td>
+                      <td>27/06/2024</td>
+                      <td>Componente Tecnico </td>
+                      <td>Diurno</td>
+                      <td>Activo</td>
+                      <td>Desarrollo full stack</td>
+                      <td>Intermedio</td>
+                      <td>
+                        <Link
+                            type="button"
+                            className="btn btn-outline-primary font-regular py-2 px-3  rounded hover:scale-95 justify-center no-underline mx-2"
+                            to={"/"}
+                          >
+                            Link
+                          </Link>
+                      </td>
                       <td>
                         <div class="inline-flex">
                           <Link
                             type="button"
                             className="btn btn-outline-primary font-regular py-2 px-3  rounded hover:scale-95 justify-center no-underline mx-2"
-                            to={"/create"}
+                            to={"/EditarSesiones"}
                           >
                             Editar
                           </Link>
@@ -170,7 +192,7 @@ function Usuarios() {
                             type="button"
                             className="btn btn-outline-danger font-regular py-2 px-3  rounded hover:scale-95 no-underline"
                             to={"/"}
-                          > 
+                          >
                             Eliminar
                           </Link>
                         </div>
@@ -203,4 +225,4 @@ function Usuarios() {
   );
 }
 
-export default Usuarios;
+export default Sesiones;

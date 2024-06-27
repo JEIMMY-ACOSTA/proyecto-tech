@@ -17,7 +17,8 @@ import EditUser from './componentes/usuarios/editarUsuario'
 import Login from './componentes/login/login';
 import Notas from './componentes/usuarios/notas';
 import EditarNotas from './componentes/usuarios/editarNota'
-
+import EditarSesiones from './componentes/usuarios/editarSesiones';
+import Sesiones from './componentes/usuarios/sesiones';
 
 const router=createBrowserRouter(
   [
@@ -66,7 +67,14 @@ const router=createBrowserRouter(
       path: "/EditarNotas",
       element: <EditarNotas/>
     },
-
+    {
+      path: "/EditarSesiones",
+      element: <EditarSesiones/>
+    },
+    {
+      path: "/Sesiones",
+      element: <Sesiones/>
+    },
   ]
 )
 
