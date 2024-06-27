@@ -1,6 +1,10 @@
 import React from 'react'
 //Importamos la libreria de bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
+
 //import Cuerpo from './componentes/cuerpo';
 //import Grid from './componentes/grid';
 import './App.css';
