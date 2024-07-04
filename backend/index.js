@@ -58,6 +58,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const usersRouter = require('./routes/users');
 const loginRouter = require('./routes/login'); // Importar el módulo login.js
+const notasRouter = require('./routes/notas'); // Importar el módulo login.js
 
 
 
@@ -69,6 +70,7 @@ app.use(bodyParser.json());
 
 app.use('/api/users', usersRouter); // Rutas para usuarios
 app.use('/api/login', loginRouter); // Rutas para iniciar sesión
+app.use('/api/notas', notasRouter); // Rutas para iniciar sesión
 
 
 app.listen(port, () => {

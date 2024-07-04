@@ -22,6 +22,7 @@ import Sesiones from './componentes/usuarios/sesiones';
 import PgProgreso from './componentes/pgProceso/pgProceso'
 import CreateSesion from './componentes/usuarios/createSesion'
 
+
 const router=createBrowserRouter(
   [
     {
@@ -66,7 +67,7 @@ const router=createBrowserRouter(
     },
 
     {
-      path: "/EditarNotas",
+      path: "/EditarNotas/:id",
       element: <EditarNotas/>
     },
     {

@@ -226,15 +226,21 @@ function EditUser() {
                       >
                         Tipo_Rol
                       </label>
-                      <input
-                        className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                        id="grid-city"
-                        name="Rol"
-                        value={Tipo_Rol}
-                        onChange={handleChange}
-                        required
-                        placeholder="Ingrese el Rol"
-                      />
+                      <select
+        className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+        id="rol"
+        name="Rol"
+        value={Tipo_Rol}
+        onChange={(e) => setTipo_Rol(e.target.value)}
+        required
+      >
+        <option value="" disabled>
+          Seleccione el tipo de rol
+        </option>
+        <option value="Estudiante">Estudiante</option>
+        <option value="Docente">Docente</option>
+        <option value="Administrador">Administrador</option>
+      </select>
                       {errors.Tipo_Rolrol && <div className="invalid-feedback">{errors.Tipo_Rol}</div>}
                     </div>
 
@@ -305,16 +311,23 @@ function EditUser() {
                       >
                         Programa
                       </label>
-                      <input
-                        className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                        id="grid-zip"
-                        type="text"
-                        name="Programa"
-                        value={programa}
-                        onChange={handleChange}
-                        required
-                        placeholder="Ingrese el programa"
-                      />
+                      <select
+        className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+        id="Programa"
+        name="Programa"
+        value={programa}
+        onChange={(e) => setPrograma(e.target.value)}
+        required
+      >
+        <option value="" disabled>
+          Seleccione el programa
+        </option>
+        <option value="Desarrollo Full Stack">Desarrollo Web Full Stack</option>
+        <option value="Blockchain">Blockchain</option>
+        <option value="Arquitectura en la Nube">Arquitectura en la Nube</option>
+        <option value="Análisis y visualizacion de Datos">Análisis y visualizacion de Datos</option>
+        <option value="Inteligencia Artificial">Inteligencia Artificial</option>
+      </select>
                       {errors.programa && <div className="invalid-feedback">{errors.programa}</div>}
                     </div>
 
@@ -323,7 +336,7 @@ function EditUser() {
                         type="submit"
                         className="bg-cyan-500 text-white font-regular py-2 px-3 rounded hover:scale-95 justify-center no-underline mx-2"
                       >
-                        Agregar
+                        Guardar
                       </button>
                       <Link
                         type="button"

@@ -49,10 +49,23 @@ router.post('/', (req, res) => {
             if (err) {
                 return res.status(500).json({ error: err.message });
             }
-            res.status(201).json({ id: results.insertId });
+            const idUsuario = results.insertId;
+
+            // Insertar las notas iniciales en ceros
+            db.query(
+                'INSERT INTO notas (ID_USUARIO, NOTA1, NOTA2, NOTA3) VALUES (?, 0, 0, 0)',
+                [idUsuario],
+                (err2) => {
+                    if (err2) {
+                        return res.status(500).json({ error: err2.message });
+                    }
+                    res.status(201).json({ id: idUsuario });
+                }
+            );
         }
     );
 });
+
 
 // Actualizar un usuario
 router.put('/:id', (req, res) => {
