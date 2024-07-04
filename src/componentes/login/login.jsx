@@ -133,7 +133,7 @@ if (isLoggedIn) {
                 // onClick={handleLogin}
                 className="bg-gray-500 text-white font-regular py-2 px-3 rounded hover:scale-95 no-underline ingresar"
               >
-                Ingresar
+                Ingresar 
               </button>
             </div>
 

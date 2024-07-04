@@ -30,6 +30,9 @@ import BotoneSec2 from "../Tailwind/botoneSec2";
 import BotonSec3 from "../Tailwind/botonSec3";
 import BotonAdmin from "../Tailwind/botonAdmin";
 
+//IMPORTACIÓN DEL SLIDE
+import SlideFotos from "../slideFotos/slideFotos";
+
 
 function Inicio() {
   //! ESTUIAR!!
@@ -174,32 +177,6 @@ function Inicio() {
                   </Tabs>
                 </Col>
               </Row>
-              {/* Fin del Apartado de noticias*/}
-              <br />
-              <br />
-              {/* TICKET*/}
-              <Card
-                style={{ width: "100%" }}
-                border="none"
-                className="text-center"
-              >
-                <Card.Body>
-                  <div class=" rounded overflow-hidden shadow-lg">
-                    <div class="px-6 py-4">
-                      <div class="font-bold text-xl mb-2">
-                        ¡CREA TU TICKET AHORA!
-                      </div>
-                      <p class="text-gray-700 text-base">
-                        Comunícanos tu inconveniente, para aseguramos de que tu
-                        experiencia sea satisfactoria.
-                      </p>
-                      <button className="bg-transparent border-2 border-emerald-600 text-emerald-600 text-4xs font-bold px-5 py-3 rounded hover:scale-95">
-                        ¡CREAR TICKET!
-                      </button>
-                    </div>
-                  </div>
-                </Card.Body>
-              </Card>
             </Col>
           </Row>
         </Col>

@@ -23,7 +23,7 @@ import BotoneSec2 from "../Tailwind/botoneSec2";
 import BotonSec3 from "../Tailwind/botonSec3";
 import BotonAdmin from "../Tailwind/botonAdmin";
 
-function EditarSesiones() {
+function CreateSesion() {
   //! ESTUIAR!!
   const [navbarhidestatus, changenavbarhidestatus] = useState(true);
   useEffect(() => {
@@ -92,11 +92,11 @@ function EditarSesiones() {
             </Button>
           </Col>
 
-          {/*Contenido Formulario*/}
+          {/*FORMULARIO PARA GENERAR NUEVA SESIÓN*/}
           <Row>
             <Col>
               <div class="container-fluid py-4 border rounded-3">
-                <h4>Editar Sesión</h4>
+                <h4>Crear nueva sesión</h4>
                 <br />
                 <form>
                   <input id="id" name="id" value="1" hidden />
@@ -235,6 +235,7 @@ function EditarSesiones() {
                     <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                       <label
                         class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                        for="grid-zip"
                       >
                         Nivel
                       </label>
@@ -255,9 +256,7 @@ function EditarSesiones() {
                       </div>
                     </div>
                     <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                      <label
-                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                      >
+                      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                         LINK
                       </label>
                       <input
@@ -305,4 +304,4 @@ function EditarSesiones() {
   );
 }
 
-export default EditarSesiones;
+export default CreateSesion;

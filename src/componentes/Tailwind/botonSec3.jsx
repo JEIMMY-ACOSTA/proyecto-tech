@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function BotonSec3() {
   return (
     <>
       <div className="flex flex-row">
-        <div className="flex flex-col justify-center text-center items-center ">
+      <div className="flex flex-col justify-center text-center items-center ">
           <span
             class="material-symbols-outlined"
             style={{ color: "#063970", fontSize: "25px" }}
@@ -13,14 +14,19 @@ export default function BotonSec3() {
           </span>
         </div>
         <div className="flex flex-col justify-center">
-          <button className="bg-transparent text-dark font-regular py-2 px-3  rounded">
+          <a
+            type="button"
+            className="btn btn-outline-none font-semibold"
+            href="https://drive.google.com/file/d/1y0AOTRynaF8NUZV8iP5bUKeDBaVAufdJ/view"
+            target="_blank"
+          >
             Manual de usuario
-          </button>
+          </a>
         </div>
       </div>
 
       <div className="flex flex-row">
-        <div className="flex flex-col justify-center text-center items-center ">
+      <div className="flex flex-col justify-center text-center items-center ">
           <span
             class="material-symbols-outlined"
             style={{ color: "#063970", fontSize: "25px" }}
@@ -29,9 +35,13 @@ export default function BotonSec3() {
           </span>
         </div>
         <div className="flex flex-col justify-center">
-          <button className="bg-transparent text-dark font-regular py-2 px-3  rounded">
+          <Link
+            type="button"
+            className="btn btn-outline-none font-semibold"
+            to={"/PgProgreso"}
+          >
             Preguntas frecuentes
-          </button>
+          </Link>
         </div>
       </div>
 
