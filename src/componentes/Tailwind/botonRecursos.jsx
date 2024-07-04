@@ -102,7 +102,7 @@ export default function BotonRecursos() {
           </span>
         </div>
         <div className="flex flex-col justify-center">
-          <a
+          <a rel="noreferrer"
 
             type="button"
             className="btn btn-outline-none font-semibold"
@@ -124,7 +124,7 @@ export default function BotonRecursos() {
           </span>
         </div>
         <div className="flex flex-col justify-center">
-          <a
+          <a rel="noreferrer"
 
             type="button"
             className="btn btn-outline-none font-semibold"
@@ -148,7 +148,7 @@ export default function BotonRecursos() {
         </div>
         <div className="flex flex-col justify-center">
 
-        <a
+        <a rel="noreferrer"
             type="button"
             className="btn btn-outline-none font-semibold"
             href="https://drive.google.com/drive/folders/1Hg_7lXKC_06-7DxqDCdaYDgwl2ELMzer"
@@ -170,7 +170,7 @@ export default function BotonRecursos() {
         </div>
         <div className="flex flex-col justify-center">
 
-        <a
+        <a rel="noreferrer"
             type="button"
             className="btn btn-outline-none font-semibold"
             href="https://drive.google.com/file/d/1hYciXmYBUHL-PV61E73yIlIliO1AiY_O/view"
@@ -192,7 +192,7 @@ export default function BotonRecursos() {
         </div>
         <div className="flex flex-col justify-center">
 
-        <a
+        <a rel="noreferrer"
             type="button"
             className="btn btn-outline-none font-semibold"
             href="https://drive.google.com/drive/folders/1BYMMus2Bcf5RgeRO1nVsC_BFvgMYPm3J"

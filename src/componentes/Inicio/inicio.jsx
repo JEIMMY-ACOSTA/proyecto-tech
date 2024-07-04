@@ -31,7 +31,7 @@ import BotonSec3 from "../Tailwind/botonSec3";
 import BotonAdmin from "../Tailwind/botonAdmin";
 
 //IMPORTACIÓN DEL SLIDE
-import SlideFotos from "../slideFotos/slideFotos";
+// import SlideFotos from "../slideFotos/slideFotos";
 
 
 function Inicio() {
