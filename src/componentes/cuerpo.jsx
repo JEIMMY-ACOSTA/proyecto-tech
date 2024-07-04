@@ -28,6 +28,10 @@ import BotonRecursos from "./Tailwind/botonRecursos";
 import BotonAdmin from "./Tailwind/botonAdmin";
 import { Link } from "react-router-dom";
 
+//IMPORTACIÓN DEL SLIDE
+import SlideFotos from "./slideFotos/slideFotos";
+
+
 function Cuerpo() {
   //! FUNCIÓN PARA OCULTAR EL MENU!!
   const [navbarhidestatus, changenavbarhidestatus] = useState(true);
@@ -99,15 +103,14 @@ function Cuerpo() {
 
           {/*Contenido sesiones Y botones material de clase..*/}
           <Row>
-            <br />
             {/*card de Sesiones virtuales*/}
             <Col md={8}>
               <h3>Desarrollo Web Full Stack</h3>
 
               <Link type="button"
-                    className="btn btn-outline-danger font-regular py-2 px-3 mt-5  rounded hover:scale-95 no-underline"
+                    className="btn btn-outline-danger font-regular px-3 mt-2 mb-4  rounded hover:scale-95 no-underline"
                     to={"/Sesiones"}>
-                    Sesiones
+                    Agregar sesiones
               </Link>  
 
               <p>Desarrollo del bootcamp:</p>
@@ -151,26 +154,15 @@ function Cuerpo() {
               </Card>
               <br />
 
-              {/*Apartado de Tickets*/}
+              {/*Apartado de SlideFotos*/}
               <Card
                 style={{ width: "100%" }}
                 border="none"
                 className="text-center"
               >
                 <Card.Body>
-                  <div class=" rounded overflow-hidden shadow-lg">
-                    <div class="px-6 py-4">
-                      <div class="font-bold text-xl mb-2">
-                        ¡CREA TU TICKET AHORA!
-                      </div>
-                      <p class="text-gray-700 text-base">
-                        Comunícanos tu inconveniente, para aseguramos de que tu
-                        experiencia sea satisfactoria.
-                      </p>
-                      <button className="bg-transparent border-2 border-emerald-600 text-emerald-600 text-4xs font-bold px-5 py-3 rounded hover:scale-95">
-                        ¡CREAR TICKET!
-                      </button>
-                    </div>
+                  <div>
+                    <SlideFotos/>
                   </div>
                 </Card.Body>
               </Card>

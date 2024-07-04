@@ -14,9 +14,14 @@ export default function BotonRecursos() {
           </span>
         </div>
         <div className="flex flex-col justify-center">
-          <button className="bg-transparent text-dark font-regular py-2 px-3  rounded">
+          <a
+            type="button"
+            className="btn btn-outline-none font-semibold"
+            href="https://drive.google.com/file/d/1QAFWnkiZ3kZrCSPFTy1800lreDEClO_2/view"
+            target="_blank"
+          >
             Kit del programador
-          </button>
+          </a>
         </div>
       </div>
 
@@ -30,9 +35,14 @@ export default function BotonRecursos() {
           </span>
         </div>
         <div className="flex flex-col justify-center">
-          <button className="bg-transparent text-dark font-regular py-2 px-3  rounded">
+          <a
+            type="button"
+            className="btn btn-outline-none font-semibold"
+            href="https://drive.google.com/drive/folders/1vEl-HnbMpQeY0L4GBC07a5n4XlxU2cpA"
+            target="_blank"
+          >
             Actividades estudiantes
-          </button>
+          </a>
         </div>
       </div>
 
@@ -46,9 +56,14 @@ export default function BotonRecursos() {
           </span>
         </div>
         <div className="flex flex-col justify-center">
-          <button className="bg-transparent text-dark font-regular py-2 px-3  rounded">
+        <a
+            type="button"
+            className="btn btn-outline-none font-semibold"
+            href="https://drive.google.com/drive/folders/1Hg_7lXKC_06-7DxqDCdaYDgwl2ELMzer"
+            target="_blank"
+          >
             Material de clase
-          </button>
+          </a>
         </div>
       </div>
 
@@ -62,13 +77,18 @@ export default function BotonRecursos() {
           </span>
         </div>
         <div className="flex flex-col justify-center">
-          <button className="bg-transparent text-dark font-regular py-2 px-3  rounded">
+        <a
+            type="button"
+            className="btn btn-outline-none font-semibold"
+            href="https://drive.google.com/file/d/1hYciXmYBUHL-PV61E73yIlIliO1AiY_O/view"
+            target="_blank"
+          >
             Contenido temático
-          </button>
+          </a>
         </div>
       </div>
 
-      <div className="flex flex-row mb-5">
+      <div className="flex flex-row mb-2">
         <div className="flex flex-col justify-center text-center items-center ">
           <span
             class="material-symbols-outlined"
@@ -78,9 +98,14 @@ export default function BotonRecursos() {
           </span>
         </div>
         <div className="flex flex-col justify-center">
-          <button className="bg-transparent text-dark font-regular py-2 px-3  rounded">
+        <a
+            type="button"
+            className="btn btn-outline-none font-semibold"
+            href="https://drive.google.com/drive/folders/1BYMMus2Bcf5RgeRO1nVsC_BFvgMYPm3J"
+            target="_blank"
+          >
             Tutorias componente técnico
-          </button>
+          </a>
         </div>
       </div>
     </>

@@ -98,11 +98,11 @@ function Sesiones() {
             <Col class="fluid">
               <div class="container-xl">
                 <div class=" mb-4">
-                  <h4>Usuarios</h4>
+                  <h4>Sesiones sincrónicas</h4>
                   <Link
                     type="button"
                     className="btn btn-primary font-regular py-2  rounded hover:scale-95"
-                    to={"/EditarSesiones"}
+                    to={"/CreateSesion"}
                   >
                     Crear nueva sesión
                   </Link>
@@ -111,7 +111,7 @@ function Sesiones() {
                   <thead>
                     <tr class="table-primary">
                       <th scope="col">ID</th>
-                      <th scope="col">Numero de sesiones</th>
+                      <th scope="col">Número de sesiones</th>
                       <th scope="col">Fecha</th>
                       <th scope="col">Componente</th>
                       <th scope="col">Horario</th>
