@@ -14,7 +14,7 @@ export default function BotonSec3() {
           </span>
         </div>
         <div className="flex flex-col justify-center">
-          <a
+          <a rel="noreferrer"
             type="button"
             className="btn btn-outline-none font-semibold"
             href="https://drive.google.com/file/d/1y0AOTRynaF8NUZV8iP5bUKeDBaVAufdJ/view"
