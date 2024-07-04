@@ -20,10 +20,12 @@ function Login() {
 // Función para manejar el envío del formulario
 const handleSubmit = async (event) => {
   event.preventDefault(); // Previene el comportamiento predeterminado del formulario
-
+  
+   
   try {
     // Envía una solicitud POST al backend para autenticar al usuario
-    const url = "http://localhost:3001/api/login";
+    const url = process.env.REACT_APP_API_BACK +"/login/";
+  //  alert(url);
 
     const response = await axios.post(url, {
       EMAIL,

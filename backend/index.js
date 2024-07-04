@@ -65,6 +65,7 @@ const notasRouter = require('./routes/notas'); // Importar el módulo login.js
 const app = express();
 const port = 3001;
 
+
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -75,5 +76,6 @@ app.use('/api/notas', notasRouter); // Rutas para iniciar sesión
 
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
+    
 });
 
