@@ -20,6 +20,7 @@ import EditarNotas from './componentes/usuarios/editarNota'
 import EditarSesiones from './componentes/usuarios/editarSesiones';
 import Sesiones from './componentes/usuarios/sesiones';
 
+
 const router=createBrowserRouter(
   [
     {
@@ -64,7 +65,7 @@ const router=createBrowserRouter(
     },
 
     {
-      path: "/EditarNotas",
+      path: "/EditarNotas/:id",
       element: <EditarNotas/>
     },
     {
