@@ -32,7 +32,9 @@ import BotonAdmin from "../Tailwind/botonAdmin";
 function CreateNew() {
   const navigate = useNavigate();
 
-  const url = `${"http://localhost:3001/api/users"}/`;
+
+  
+  
 
   const [Documento, setDocumento] = useState("");
   const [nombres, setNombres] = useState("");
@@ -67,7 +69,7 @@ function CreateNew() {
 
     try {
 
-
+      const url = process.env.REACT_APP_API_BACK +"/users/";
       const response = await axios.post(url, {
 
         DOCUMENTO: Documento,

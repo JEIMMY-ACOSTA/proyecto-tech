@@ -24,7 +24,7 @@ import BotonSec3 from "../Tailwind/botonSec3";
 import BotonAdmin from "../Tailwind/botonAdmin";
 
 function Sesiones() {
-  //! ESTUIAR!!
+
   const [navbarhidestatus, changenavbarhidestatus] = useState(true);
   useEffect(() => {
     const navbar = document.getElementById("navbar");

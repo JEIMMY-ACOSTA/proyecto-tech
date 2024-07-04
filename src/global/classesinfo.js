@@ -1,4 +1,5 @@
-{/**! ESTUIAR!! */}
+
+
 export const classInfo = [
     {
         header: "Sesión 1",
