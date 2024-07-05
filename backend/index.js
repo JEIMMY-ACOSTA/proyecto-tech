@@ -61,14 +61,13 @@ const loginRouter = require('./routes/login'); // Importar el módulo login.js
 const notasRouter = require('./routes/notas'); // Importar el módulo login.js
 const sesionesRouter = require('./routes/sesiones');
 
-
+require("dotenv").config();
 const app = express();
-const port = 3001;
 
 
 app.use(
   cors({
-    origin: "https://proyecto-tech2024.vercel.app",
+    origin: process.env.URI_FRONTEND,
   })
 );
 app.use(bodyParser.json());
@@ -78,8 +77,8 @@ app.use('/api/login', loginRouter); // Rutas para iniciar sesión
 app.use('/api/notas', notasRouter); // Rutas para iniciar sesión
 app.use('/api/sesiones', sesionesRouter);
 
-app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`);
+app.listen(process.env.PORT, () => {
+    console.log(`Server running on http://localhost:${process.env.PORT}`);
     
 });
 
