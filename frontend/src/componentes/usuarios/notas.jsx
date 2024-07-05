@@ -30,7 +30,7 @@ export default function Notas() {
   const [notas, setNotas] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const url = process.env.REACT_APP_API_BACK +"/notas/";
+  const url = process.env.REACT_APP_API_BACK +"/api/notas/";
 
   useEffect(() => {
     const getNotas = async () => {

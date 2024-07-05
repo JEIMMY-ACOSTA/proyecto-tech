@@ -69,7 +69,7 @@ function CreateNew() {
 
     try {
 
-      const url = process.env.REACT_APP_API_BACK +"/users/";
+      const url = process.env.REACT_APP_API_BACK +"/api/users/";
       const response = await axios.post(url, {
 
         DOCUMENTO: Documento,

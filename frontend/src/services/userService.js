@@ -1,4 +1,4 @@
-const API_URL = process.env.REACT_APP_API_BACK +"/users";
+const API_URL = process.env.REACT_APP_API_BACK +"/api/users";
 
 
 export const fetchUsers = async () => {

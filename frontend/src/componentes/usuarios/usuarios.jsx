@@ -84,7 +84,7 @@ function Usuarios() {
     try {
       
     
-      const url = `${process.env.REACT_APP_API_BACK +"/users/"}/${idUsuario}`;
+      const url = `${process.env.REACT_APP_API_BACK +"/api/users/"}/${idUsuario}`;
 
       const response = await axios.delete(url);
 

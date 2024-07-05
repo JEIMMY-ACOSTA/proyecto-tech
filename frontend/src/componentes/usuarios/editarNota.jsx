@@ -39,7 +39,7 @@ function EditarNotas() {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const url = `${process.env.REACT_APP_API_BACK}/notas/${id}`;
+        const url = `${process.env.REACT_APP_API_BACK}/api/notas/${id}`;
       const response = await axios.get(url); // Aquí se realiza la solicitud GET
       const userData = response.data;
   
@@ -83,7 +83,7 @@ function EditarNotas() {
     }
 
     try {
-      const url = `${process.env.REACT_APP_API_BACK}/notas/${id}`; // Define 'url' para la solicitud PUT
+      const url = `${process.env.REACT_APP_API_BACK}/api/notas/${id}`; // Define 'url' para la solicitud PUT
     const response = await axios.put(url, {
       NOTA1: Nota1,
       NOTA2: Nota2,

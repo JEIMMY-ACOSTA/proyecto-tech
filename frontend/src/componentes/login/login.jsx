@@ -24,7 +24,7 @@ const handleSubmit = async (event) => {
    
   try {
     // Envía una solicitud POST al backend para autenticar al usuario
-    const url = process.env.REACT_APP_API_BACK +"/login/";
+    const url = process.env.REACT_APP_API_BACK +"/api/login/";
   //  alert(url);
 
     const response = await axios.post(url, {

@@ -26,7 +26,7 @@ import BotonAdmin from "../Tailwind/botonAdmin";
 function EditUser() {
   const navigate = useNavigate();
   const { id } = useParams(); // Obtener el ID del usuario de los parámetros de la URL
-  const url = `${process.env.REACT_APP_API_BACK +"/users/"}/${id}`;
+  const url = `${process.env.REACT_APP_API_BACK +"/api/users/"}/${id}`;
 
   const [Documento, setDocumento] = useState("");
   const [nombres, setNombres] = useState("");
