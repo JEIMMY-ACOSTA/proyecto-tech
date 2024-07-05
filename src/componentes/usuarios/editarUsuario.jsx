@@ -26,7 +26,7 @@ import BotonAdmin from "../Tailwind/botonAdmin";
 function EditUser() {
   const navigate = useNavigate();
   const { id } = useParams(); // Obtener el ID del usuario de los parámetros de la URL
-  const url = `${"http://localhost:3001/api/users"}/${id}`;
+  const url = `${process.env.REACT_APP_API_BACK +"/users/"}/${id}`;
 
   const [Documento, setDocumento] = useState("");
   const [nombres, setNombres] = useState("");
@@ -185,7 +185,7 @@ function EditUser() {
                       </label>
                       <input
                         className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                        // id="grid-city"
+                        
                         id="nombres"
                         type="text"
                         name="nombres"

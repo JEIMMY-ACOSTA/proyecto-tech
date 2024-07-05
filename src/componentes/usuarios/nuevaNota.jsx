@@ -28,7 +28,7 @@ import BotonAdmin from "../Tailwind/botonAdmin";
 function NuevaNota() {
     const navigate = useNavigate();
 
-    const url = `${"http://localhost:3001/api/users"}/`;
+    const url = process.env.REACT_APP_API_BACK +"/users/";
 
 
     const [notaUno, setNotaUno] = useState("");

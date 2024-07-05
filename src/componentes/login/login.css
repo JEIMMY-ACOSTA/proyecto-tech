@@ -20,6 +20,7 @@ h1 {
   background: none;
   box-shadow: none;
   outline: none;
+  color: white;
 }
 
 .form-control::placeholder {

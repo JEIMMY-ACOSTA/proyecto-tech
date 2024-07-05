@@ -19,6 +19,8 @@ import Notas from './componentes/usuarios/notas';
 import EditarNotas from './componentes/usuarios/editarNota'
 import EditarSesiones from './componentes/usuarios/editarSesiones';
 import Sesiones from './componentes/usuarios/sesiones';
+import PgProgreso from './componentes/pgProceso/pgProceso'
+import CreateSesion from './componentes/usuarios/createSesion'
 
 
 const router = createBrowserRouter(
@@ -80,6 +82,18 @@ const router = createBrowserRouter(
       path: "/Sesiones",
       element: <Sesiones />
     },
+    {
+      path: "/PgProgreso",
+      element: <PgProgreso/>
+    },
+
+    {
+      path: "/CreateSesion",
+      element: <CreateSesion/>
+    },
+
+
+    
   ]
 )
 

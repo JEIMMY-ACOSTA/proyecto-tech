@@ -82,10 +82,11 @@ function Usuarios() {
 
   const eliminarUsuario = async (idUsuario) => {
     try {
-      // const response = await axios.delete(`http://localhost:8080/usuario/${idUsuario}`);
-      const urle = `${"http://localhost:3001/api/users"}/${idUsuario}`;
+      
+    
+      const url = `${process.env.REACT_APP_API_BACK +"/users/"}/${idUsuario}`;
 
-      const response = await axios.delete(urle);
+      const response = await axios.delete(url);
 
       console.log("Usuario eliminado:", response.data);
       // navigate("/usuarios");

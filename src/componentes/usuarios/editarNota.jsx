@@ -27,7 +27,9 @@ import BotonAdmin from "../Tailwind/botonAdmin";
 function EditarNotas() {
   const navigate = useNavigate();
   const { id } = useParams(); // Obtener el ID del usuario de los parámetros de la URL
-  const url = `${"http://localhost:3001/api/notas"}/${id}`;
+  // const url = `${"http://localhost:3001/api/notas"}/${id}`;
+
+
 
   const [Nota1, setNota1] = useState("");
   const [Nota2, setNota2] = useState("");
@@ -38,8 +40,10 @@ function EditarNotas() {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get(`${"http://localhost:3001/api/notas"}/${id}`);
-        const userData = response.data;
+        const url = `${process.env.REACT_APP_API_BACK}/notas/${id}`;
+      const response = await axios.get(url); // Aquí se realiza la solicitud GET
+      const userData = response.data;
+  
         setNota1(userData.NOTA1);
         setNota2(userData.NOTA2);
         setNota3(userData.NOTA3);
@@ -80,14 +84,13 @@ function EditarNotas() {
     }
 
     try {
-      
-      const response = await axios.put(url, {
+      const url = `${process.env.REACT_APP_API_BACK}/notas/${id}`; // Define 'url' para la solicitud PUT
+    const response = await axios.put(url, {
+      NOTA1: Nota1,
+      NOTA2: Nota2,
+      NOTA3: Nota3,
+    });
 
-        NOTA1: Nota1,
-        NOTA2: Nota2,
-        NOTA3: Nota3,
-  
-      });
 
       console.log("Respuesta del servidor:", response.data);
 

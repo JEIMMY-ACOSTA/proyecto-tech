@@ -285,6 +285,28 @@ function EditSession() {
                       >
                         Nivel
                       </label>
+                      <div class="relative">
+                        <select
+                          class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                          id="NIVEL"
+                          //Estos valores (1, 2 y 3) son los que se enviarán al servidor cuando el usuario seleccione una opción y se envíe el formulario,
+                          //por lo que puedes usarlos para procesar la entrada de manera consistente en tu backend :3.
+                        >
+                          <option value="" disabled>
+                            Seleccione el nivel
+                          </option>
+                          <option value="BASICO">Básico</option>
+                          <option value="INTERMEDIO">Intermedio</option>
+                          <option value="AVANZADO">Avanzado</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                      <label
+                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                      >
+                        LINK
+                      </label>
                       <input
                         className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                         id="nivel"

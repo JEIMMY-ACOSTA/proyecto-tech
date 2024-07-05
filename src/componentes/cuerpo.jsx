@@ -23,6 +23,10 @@ import BotonRecursos from "./Tailwind/botonRecursos";
 import BotonAdmin from "./Tailwind/botonAdmin";
 import { Link } from "react-router-dom";
 
+//IMPORTACIÓN DEL SLIDE
+import SlideFotos from "./slideFotos/slideFotos";
+
+
 function Cuerpo() {
   // Estado para ocultar el menú
   const [navbarhidestatus, changenavbarhidestatus] = useState(true);
@@ -134,7 +138,6 @@ function Cuerpo() {
 
           {/*Contenido sesiones Y botones material de clase..*/}
           <Row>
-            <br />
             {/*card de Sesiones virtuales*/}
             <Col md={8}>
               <h3>Desarrollo Web Full Stack</h3>
@@ -215,7 +218,7 @@ function Cuerpo() {
               >
                 <Card.Body>
                   <div>
-                    {/*Apartado de SlideFotos NO ESTÁ EL COMPONENTE :3*/}
+                    <SlideFotos/>
                   </div>
                 </Card.Body>
               </Card>
