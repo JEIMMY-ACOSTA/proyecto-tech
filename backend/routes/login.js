@@ -8,7 +8,7 @@ router.post("/", async (req, res) => {
   try {
     const { EMAIL, CONTRASENA } = req.body;
     const query =
-      "SELECT Id_Usuario, Email, Nombres, Tipo_Rol FROM Usuarios WHERE Email = ? AND contrasena = ?";
+      "SELECT ID_USUARIO, EMAIL, NOMBRES, TIPO_ROL FROM usuarios WHERE EMAIL = ? AND CONTRASENA = ?";
     const [results] = await db.query(query, [EMAIL, CONTRASENA]);
     if (results.length > 0) {
       // Usuario autenticado correctamente
@@ -16,10 +16,10 @@ router.post("/", async (req, res) => {
       return res.status(200).json({
         message: "Login successful",
         data: {
-          Id_Usuario: user.Id_Usuario,
-          Email: user.Email,
-          Nombres: user.Nombres,
-          Tipo_Rol: user.Tipo_Rol,
+          ID_USUARIO: user.ID_USUARIO,
+          EMAIL: user.EMAIL,
+          NOMBRES: user.NOMBRES,
+          TIPO_ROL: user.TIPO_ROL,
         },
       });
     } else {

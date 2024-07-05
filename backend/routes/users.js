@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
         const { id } = req.params;
-        const query = "SELECT * FROM USUARIOS WHERE Id_Usuario = ?";
+        const query = "SELECT * FROM usuarios WHERE Id_Usuario = ?";
         const [results] = await db.query(query, [id]);
         if (results.length > 0) {
             return res.status(200).json(results[0]);
