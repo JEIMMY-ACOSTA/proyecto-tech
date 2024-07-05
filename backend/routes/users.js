@@ -37,7 +37,7 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
     try {
         const { NOMBRES, CONTRASENA, EMAIL, TIPO_ROL, DOCUMENTO, TELEFONO, PROGRAMA } = req.body;
-        await db.query(
+        const [results] = await db.query(
             'INSERT INTO usuarios (NOMBRES, CONTRASENA, EMAIL, TIPO_ROL, DOCUMENTO, TELEFONO, PROGRAMA) VALUES (?, ?, ?, ?, ?, ?, ?)',
             [NOMBRES, CONTRASENA, EMAIL, TIPO_ROL, DOCUMENTO, TELEFONO, PROGRAMA]);
 

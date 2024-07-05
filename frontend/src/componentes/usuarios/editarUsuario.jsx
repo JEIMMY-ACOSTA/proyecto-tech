@@ -26,7 +26,7 @@ import BotonAdmin from "../Tailwind/botonAdmin";
 function EditUser() {
   const navigate = useNavigate();
   const { id } = useParams(); // Obtener el ID del usuario de los parámetros de la URL
-  const url = `${process.env.REACT_APP_API_BACK +"/api/users/"}/${id}`;
+  const url = `${process.env.REACT_APP_API_BACK + "/api/users/"}/${id}`;
 
   const [Documento, setDocumento] = useState("");
   const [nombres, setNombres] = useState("");
@@ -82,14 +82,14 @@ function EditUser() {
     event.preventDefault();
 
     const newErrors = {};
-    if (!Documento) newErrors.tipoDocumento = "El tipo de documento es obligatorio";
+    if (!Documento)
+      newErrors.tipoDocumento = "El tipo de documento es obligatorio";
     if (!nombres) newErrors.nombres = "Los nombres son obligatorios";
     if (!email) newErrors.email = "El correo electrónico es obligatorio";
     if (!Tipo_Rol) newErrors.Tipo_Rol = "El rol es obligatorio";
     if (!contrasena) newErrors.contrasena = "La contraseña es obligatoria";
     if (!telefono) newErrors.telefono = "El telefono no es valido";
     if (!programa) newErrors.prgrama = "El programa es obligatorio";
-
 
     setErrors(newErrors);
 
@@ -106,14 +106,13 @@ function EditUser() {
       }
 
       const response = await axios.put(url, {
-
         DOCUMENTO: Documento,
         NOMBRES: nombres,
         EMAIL: email,
         TIPO_ROL: Tipo_Rol,
         CONTRASENA: contrasena,
         TELEFONO: telefono,
-        PROGRAMA: programa
+        PROGRAMA: programa,
       });
 
       console.log("Respuesta del servidor:", response.data);
@@ -124,11 +123,17 @@ function EditUser() {
       console.error("Error al actualizar usuario:", error);
 
       if (error.response) {
-        console.error("Error en la respuesta del servidor:", error.response.data);
+        console.error(
+          "Error en la respuesta del servidor:",
+          error.response.data
+        );
       } else if (error.request) {
         console.error("No se recibió respuesta del servidor:", error.request);
       } else {
-        console.error("Error en la configuración de la solicitud:", error.message);
+        console.error(
+          "Error en la configuración de la solicitud:",
+          error.message
+        );
       }
 
       alert("Error al actualizar usuario. Por favor, intenta nuevamente.");
@@ -187,7 +192,6 @@ function EditUser() {
                       </label>
                       <input
                         className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                        
                         id="nombres"
                         type="text"
                         name="nombres"
@@ -196,7 +200,9 @@ function EditUser() {
                         required
                         placeholder="Ingrese Nombres"
                       />
-                      {errors.nombres && <div className="invalid-feedback">{errors.nombres}</div>}
+                      {errors.nombres && (
+                        <div className="invalid-feedback">{errors.nombres}</div>
+                      )}
                     </div>
 
                     <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
@@ -216,7 +222,11 @@ function EditUser() {
                         placeholder="Ingrese Documento"
                         type="number"
                       />
-                      {errors.Documento && <div className="invalid-feedback">{errors.Documento}</div>}
+                      {errors.Documento && (
+                        <div className="invalid-feedback">
+                          {errors.Documento}
+                        </div>
+                      )}
                     </div>
                   </div>
                   <div className="flex flex-wrap -mx-3 mb-2">
@@ -228,21 +238,25 @@ function EditUser() {
                         Tipo_Rol
                       </label>
                       <select
-        className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-        id="rol"
-        name="Rol"
-        value={Tipo_Rol}
-        onChange={(e) => setTipo_Rol(e.target.value)}
-        required
-      >
-        <option value="" disabled>
-          Seleccione el tipo de rol
-        </option>
-        <option value="Estudiante">Estudiante</option>
-        <option value="Docente">Docente</option>
-        <option value="Administrador">Administrador</option>
-      </select>
-                      {errors.Tipo_Rolrol && <div className="invalid-feedback">{errors.Tipo_Rol}</div>}
+                        className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                        id="rol"
+                        name="Rol"
+                        value={Tipo_Rol}
+                        onChange={(e) => setTipo_Rol(e.target.value)}
+                        required
+                      >
+                        <option value="" disabled>
+                          Seleccione el tipo de rol
+                        </option>
+                        <option value="Estudiante">Estudiante</option>
+                        <option value="Docente">Docente</option>
+                        <option value="Administrador">Administrador</option>
+                      </select>
+                      {errors.Tipo_Rol && (
+                        <div clName="invaasslid-feedback">
+                          {errors.Tipo_Rol}
+                        </div>
+                      )}
                     </div>
 
                     <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
@@ -262,7 +276,11 @@ function EditUser() {
                         placeholder="Ingrese contraseña"
                         type="password"
                       />
-                      {errors.contrasena && <div className="invalid-feedback">{errors.contrasena}</div>}
+                      {errors.contrasena && (
+                        <div className="invalid-feedback">
+                          {errors.contrasena}
+                        </div>
+                      )}
                     </div>
 
                     <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
@@ -282,7 +300,9 @@ function EditUser() {
                         required
                         placeholder="Ingrese Email"
                       />
-                      {errors.email && <div className="invalid-feedback">{errors.email}</div>}
+                      {errors.email && (
+                        <div className="invalid-feedback">{errors.email}</div>
+                      )}
                     </div>
 
                     <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
@@ -302,7 +322,11 @@ function EditUser() {
                         required
                         placeholder="Ingrese su número"
                       />
-                      {errors.telefono && <div className="invalid-feedback">{errors.telefono}</div>}
+                      {errors.telefono && (
+                        <div className="invalid-feedback">
+                          {errors.telefono}
+                        </div>
+                      )}
                     </div>
 
                     <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
@@ -313,23 +337,35 @@ function EditUser() {
                         Programa
                       </label>
                       <select
-        className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-        id="Programa"
-        name="Programa"
-        value={programa}
-        onChange={(e) => setPrograma(e.target.value)}
-        required
-      >
-        <option value="" disabled>
-          Seleccione el programa
-        </option>
-        <option value="Desarrollo Full Stack">Desarrollo Web Full Stack</option>
-        <option value="Blockchain">Blockchain</option>
-        <option value="Arquitectura en la Nube">Arquitectura en la Nube</option>
-        <option value="Análisis y visualizacion de Datos">Análisis y visualizacion de Datos</option>
-        <option value="Inteligencia Artificial">Inteligencia Artificial</option>
-      </select>
-                      {errors.programa && <div className="invalid-feedback">{errors.programa}</div>}
+                        className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                        id="Programa"
+                        name="Programa"
+                        value={programa}
+                        onChange={(e) => setPrograma(e.target.value)}
+                        required
+                      >
+                        <option value="" disabled>
+                          Seleccione el programa
+                        </option>
+                        <option value="Desarrollo Full Stack">
+                          Desarrollo Web Full Stack
+                        </option>
+                        <option value="Blockchain">Blockchain</option>
+                        <option value="Arquitectura en la Nube">
+                          Arquitectura en la Nube
+                        </option>
+                        <option value="Análisis y visualizacion de Datos">
+                          Análisis y visualizacion de Datos
+                        </option>
+                        <option value="Inteligencia Artificial">
+                          Inteligencia Artificial
+                        </option>
+                      </select>
+                      {errors.programa && (
+                        <div className="invalid-feedback">
+                          {errors.programa}
+                        </div>
+                      )}
                     </div>
 
                     <div className="inline-flex mt-4 mx-2">
@@ -353,14 +389,14 @@ function EditUser() {
             </Col>
           </Row>
         </Col>
-      </Row >
+      </Row>
 
       <Row>
         <Col>
           <Footer />
         </Col>
       </Row>
-    </Container >
+    </Container>
   );
 }
 
