@@ -66,7 +66,11 @@ const app = express();
 const port = 3001;
 
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://proyecto-tech2024.vercel.app",
+  })
+);
 app.use(bodyParser.json());
 
 app.use('/api/users', usersRouter); // Rutas para usuarios

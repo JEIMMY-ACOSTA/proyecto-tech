@@ -4,10 +4,7 @@ const mysql = require('mysql2');
 
 // Configuración de la conexión a la base de datos
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'talento2'
+  uri: "mysql://talento2_hopetoldso:fd95197cfa31282166d71e64a844619d8bbfe906@fmf.h.filess.io:3307/talento2_hopetoldso"
 });
 
 router.get('/', (req, res) => {
