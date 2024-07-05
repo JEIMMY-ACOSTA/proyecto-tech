@@ -1,11 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const mysql = require('mysql2');
-
-// Configuración de la conexión a la base de datos
-const db = mysql.createConnection({
-    uri: "mysql://talento2_hopetoldso:fd95197cfa31282166d71e64a844619d8bbfe906@fmf.h.filess.io:3307/talento2_hopetoldso"
-});
+const db = require("../db.js");
 
 // Obtener todos los usuarios
 router.get('/', (req, res) => {
