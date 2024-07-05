@@ -5,7 +5,8 @@ const db = require("../db.js");
 // Obtener todos los usuarios
 router.get('/', async (req, res) => {
     try {
-        await db.query('SELECT * FROM usuarios');
+        const [results] = await db.query('SELECT * FROM usuarios');
+        return res.json(results);
     } catch (error) {
         console.log(error);
         return res.status(500).json({ error });
