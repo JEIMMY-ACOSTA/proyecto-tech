@@ -93,14 +93,12 @@ function EditSession() {
     if (!curso) newErrors.curso = "El curso es obligatorio";
     if (!nivel) newErrors.nivel = "El nivel es obligatorio";
     if (!link) newErrors.link = "El link es obligatorio";
-    if (!numero_sesion) newErrors.sessionId = "El ID de sesión es obligatorio";
 
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length > 0) {
       return;
     }
-
     try {
       const body = {
         NUMERO_SESION: numero_sesion,
@@ -150,7 +148,7 @@ function EditSession() {
                   </Card.Title>
                 </ListGroup.Item>
                 <ListGroup.Item>
-                  <BotonBootcamp/>
+                  <BotonBootcamp />
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <BotoneSec2 />
@@ -196,7 +194,11 @@ function EditSession() {
                         required
                         placeholder="Numero de sesion"
                       />
-                      {errors.numero_sesion && <div className="invalid-feedback">{errors.numero_sesion}</div>}
+                      {errors.numero_sesion && (
+                        <div className="invalid-feedback">
+                          {errors.numero_sesion}
+                        </div>
+                      )}
                     </div>
 
                     <div className="w-full md:w-1/3 px-3 mb-6 md:mb-5">
@@ -216,7 +218,9 @@ function EditSession() {
                         required
                         placeholder="Ingrese Fecha"
                       />
-                      {errors.fecha && <div className="invalid-feedback">{errors.fecha}</div>}
+                      {errors.fecha && (
+                        <div className="invalid-feedback">{errors.fecha}</div>
+                      )}
                     </div>
 
                     <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
@@ -235,7 +239,11 @@ function EditSession() {
                         required
                         placeholder="Ingrese Componente"
                       />
-                      {errors.componente && <div className="invalid-feedback">{errors.componente}</div>}
+                      {errors.componente && (
+                        <div className="invalid-feedback">
+                          {errors.componente}
+                        </div>
+                      )}
                     </div>
                   </div>
                   <div className="flex flex-wrap -mx-3 mb-2">
@@ -256,7 +264,9 @@ function EditSession() {
                         required
                         placeholder="Ingrese Horario"
                       />
-                      {errors.horario && <div className="invalid-feedback">{errors.horario}</div>}
+                      {errors.horario && (
+                        <div className="invalid-feedback">{errors.horario}</div>
+                      )}
                     </div>
 
                     <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
@@ -275,7 +285,9 @@ function EditSession() {
                         required
                         placeholder="Ingrese Curso"
                       />
-                      {errors.curso && <div className="invalid-feedback">{errors.curso}</div>}
+                      {errors.curso && (
+                        <div className="invalid-feedback">{errors.curso}</div>
+                      )}
                     </div>
 
                     <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
@@ -288,7 +300,11 @@ function EditSession() {
                       <div class="relative">
                         <select
                           class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                          id="NIVEL"
+                          id="nivel"
+                          name="nivel"
+                          onChange={handleChange}
+                          value={nivel}
+                          required
                           //Estos valores (1, 2 y 3) son los que se enviarán al servidor cuando el usuario seleccione una opción y se envíe el formulario,
                           //por lo que puedes usarlos para procesar la entrada de manera consistente en tu backend :3.
                         >
@@ -301,23 +317,7 @@ function EditSession() {
                         </select>
                       </div>
                     </div>
-                    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                      <label
-                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                      >
-                        LINK
-                      </label>
-                      <input
-                        className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                        id="nivel"
-                        name="nivel"
-                        value={nivel}
-                        onChange={handleChange}
-                        required
-                        placeholder="Ingrese Nivel"
-                      />
-                      {errors.nivel && <div className="invalid-feedback">{errors.nivel}</div>}
-                    </div>
+
                     <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                       <label
                         className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -334,7 +334,9 @@ function EditSession() {
                         required
                         placeholder="Ingrese Link"
                       />
-                      {errors.link && <div className="invalid-feedback">{errors.link}</div>}
+                      {errors.link && (
+                        <div className="invalid-feedback">{errors.link}</div>
+                      )}
                     </div>
                     <div className="inline-flex mt-4 mx-2">
                       <button
