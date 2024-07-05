@@ -21,7 +21,7 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const query = "SELECT * FROM NOTAS WHERE ID_CALIFICACION = ?";
+    const query = "SELECT * FROM notas WHERE ID_CALIFICACION = ?";
     const [results] = await db.query(query, [id]);
 
     if (results.length > 0) {
