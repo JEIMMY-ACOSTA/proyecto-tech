@@ -68,6 +68,7 @@ const app = express();
 app.use(
   cors({
     origin: process.env.URI_FRONTEND,
+    credentials: true
   })
 );
 app.use(bodyParser.json());
