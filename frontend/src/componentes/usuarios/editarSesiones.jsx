@@ -26,7 +26,7 @@ import BotonAdmin from "../Tailwind/botonAdmin";
 function EditSession() {
   const navigate = useNavigate();
   const { id } = useParams(); // Obtener el ID de la sesión de los parámetros de la URL
-  const urlEditSession = `${process.env.REACT_APP_API_BACK} /api/sesiones/${id}`;
+  const urlEditSession = `${process.env.REACT_APP_API_BACK}/api/sesiones/${id}`;
   const urlNewSession = process.env.REACT_APP_API_BACK + "/api/sesiones";
 
   const [numero_sesion, setNumero_sesion] = useState("");
