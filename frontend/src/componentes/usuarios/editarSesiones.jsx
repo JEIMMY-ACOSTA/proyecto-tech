@@ -26,8 +26,8 @@ import BotonAdmin from "../Tailwind/botonAdmin";
 function EditSession() {
   const navigate = useNavigate();
   const { id } = useParams(); // Obtener el ID de la sesión de los parámetros de la URL
-  const urlEditSession = `${"http://localhost:3001/api/sesiones"}/${id}`;
-  const urlNewSession = "http://localhost:3001/api/sesiones";
+  const urlEditSession = `${process.env.REACT_APP_API_BACK} /api/sesiones/${id}`;
+  const urlNewSession = process.env.REACT_APP_API_BACK + "/api/sesiones";
 
   const [numero_sesion, setNumero_sesion] = useState("");
   const [estado, setEstado] = useState("");
@@ -43,7 +43,9 @@ function EditSession() {
     const fetchSessionData = async () => {
       try {
         if (!id) return;
-        const response = await axios.get(`${"http://localhost:3001/api/sesiones"}/${id}`);
+        const response = await axios.get(
+          `${process.env.REACT_APP_API_BACK}/api/sesiones/${id}`
+        );
         const sessionData = response.data;
         setFecha(new Date(Date.parse(sessionData.FECHA)).toISOString().split('T')[0]);
         setComponente(sessionData.COMPONENTE);

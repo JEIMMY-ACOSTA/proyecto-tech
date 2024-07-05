@@ -40,7 +40,9 @@ function EditUser() {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get(`${"http://localhost:3001/api/users"}/${id}`);
+        const response = await axios.get(
+          `${process.env.REACT_APP_API_BACK}/api/users/${id}`
+        );
         const userData = response.data;
         setDocumento(userData.DOCUMENTO);
         setNombres(userData.NOMBRES);

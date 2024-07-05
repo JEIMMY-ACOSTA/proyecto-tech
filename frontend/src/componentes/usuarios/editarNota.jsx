@@ -27,7 +27,6 @@ import BotonAdmin from "../Tailwind/botonAdmin";
 function EditarNotas() {
   const navigate = useNavigate();
   const { id } = useParams(); // Obtener el ID del usuario de los parámetros de la URL
-  // const url = `${"http://localhost:3001/api/notas"}/${id}`;
 
 
 

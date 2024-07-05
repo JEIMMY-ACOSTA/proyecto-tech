@@ -35,7 +35,7 @@ function Cuerpo() {
   const [sesiones, setSesiones] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const url = "http://localhost:3001/api/sesiones/"; // Asegúrate de que esta URL es correcta
+  const url = process.env.REACT_APP_API_BACK + "/api/sesiones/"; // Asegúrate de que esta URL es correcta
 
   useEffect(() => {
     const getSesiones = async () => {

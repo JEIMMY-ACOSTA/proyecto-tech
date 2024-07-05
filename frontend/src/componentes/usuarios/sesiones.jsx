@@ -25,7 +25,7 @@ export default function Sesiones() {
   const [sesiones, setSesiones] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const url = "http://localhost:3001/api/notas/";
+  const url = process.env.REACT_APP_API_BACK + "/api/notas/";
 
   useEffect(() => {
     const getSesiones = async () => {
