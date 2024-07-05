@@ -1,25 +1,20 @@
 import React, { useEffect, useState } from "react";
+import axios from 'axios';
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./cuerpo.css";
 
-//Creamos el componente
+// Componentes de Bootstrap y Tailwind
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-
-import Banner from "./banner/banner";
-
 import Accordion from "react-bootstrap/Accordion";
 import { Button } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 
-import ClassCard from "../card/card";
-import { classInfo } from "../global/classesinfo";
-
+import Banner from "./banner/banner";
 import Footer from "./footer/footer";
 import BarraPro from "./barra/barraPro";
-
-//Apartado tailwind
 import BotonInicio from "../componentes/Tailwind/botonInicio";
 import BotonBootcamp from "./Tailwind/botonBootcamp";
 import BotoneSec2 from "./Tailwind/botoneSec2";
@@ -29,20 +24,60 @@ import BotonAdmin from "./Tailwind/botonAdmin";
 import { Link } from "react-router-dom";
 
 function Cuerpo() {
-  //! FUNCIÓN PARA OCULTAR EL MENU!!
+  // Estado para ocultar el menú
   const [navbarhidestatus, changenavbarhidestatus] = useState(true);
+
+  // Estado para almacenar las sesiones
+  const [sesiones, setSesiones] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const url = "http://localhost:3001/api/sesiones/"; // Asegúrate de que esta URL es correcta
+
+  useEffect(() => {
+    const getSesiones = async () => {
+      try {
+        const response = await axios.get(url);
+        const data = response.data;
+        // Asegúrate de que data es un array
+        if (Array.isArray(data)) {
+          setSesiones(data);
+        } else {
+          setSesiones([]);
+        }
+      } catch (error) {
+        setError(error); // Captura el error y lo establece en el estado
+      } finally {
+        setLoading(false); // Marcar carga como completa, independientemente de si hay un error o no
+      }
+    };
+
+    getSesiones();
+  }, [url]); // Dependencia: `url`
+
   useEffect(() => {
     const navbar = document.getElementById("navbar");
-    if (navbarhidestatus) {
-      navbar.classList.add("sm-hide");
-    } else {
-      navbar.classList.remove("sm-hide");
+    if (navbar) {
+      if (navbarhidestatus) {
+        navbar.classList.add("sm-hide");
+      } else {
+        navbar.classList.remove("sm-hide");
+      }
     }
   }, [navbarhidestatus]);
+
+  // Manejar el estado de carga de datos
+  if (loading) {
+    return <div>Cargando...</div>;
+  }
+
+  // Manejar errores de carga de datos
+  if (error) {
+    return <div>Error al cargar los datos: {error.message}</div>;
+  }
+
   return (
     <Container fluid>
       {/* xs={4} = Tamaño de la columna <Container fluid />ancho: 100% en todos los tamaños de ventana gráfica y dispositivo.*/}
-
       {/*Contenido total*/}
       <Row>
         {/*Parte iz Menú*/}
@@ -62,7 +97,7 @@ function Cuerpo() {
                   <BotonBootcamp />
                 </ListGroup.Item>
 
-                {/*Cuerpo menú 3 parte (Hackathos..*/}
+                {/*Cuerpo menú 3 parte (Hackathos..)*/}
                 <ListGroup.Item>
                   <BotoneSec2 />
                 </ListGroup.Item>
@@ -82,13 +117,13 @@ function Cuerpo() {
         </Col>
 
         {/*Parte CENTRO PAG*/}
-        <Col class="col">
+        <Col className="col">
           {/*Banner y boton*/}
           <Col>
             <Banner />
             <br />
 
-            {/**! CONTINUACIÓN DE LA FUNCIÓN PARA OCULTAR EL MENU (eSTÁ EN ROJO ARRIBA)!! */}
+            {/**! CONTINUACIÓN DE LA FUNCIÓN PARA OCULTAR EL MENU!! */}
             <Button
               onClick={() => changenavbarhidestatus(!navbarhidestatus)}
               className="lg-hide"
@@ -104,27 +139,48 @@ function Cuerpo() {
             <Col md={8}>
               <h3>Desarrollo Web Full Stack</h3>
 
-              <Link type="button"
-                    className="btn btn-outline-danger font-regular py-2 px-3 mt-5  rounded hover:scale-95 no-underline"
-                    to={"/Sesiones"}>
-                    Sesiones
-              </Link>  
+              <Link
+                type="button"
+                className="btn btn-outline-danger font-regular py-2 px-3 mt-5 rounded hover:scale-95 no-underline"
+                to={"/NuevaSesion"}
+              >
+                Añadir sesion
+              </Link>
 
               <p>Desarrollo del bootcamp:</p>
               <div className="acordeon">
                 <Accordion flush>
-                  {/**! ESTAMOS RECORRIENDO UN ARRIVE (ESTE SE ENCUENTRA EN GLOBAL)!! */}
-                  {classInfo.map((info, index) => {
-                    return (
-                      <>
-                        <ClassCard classInfo={info} eventKey={index} />
-                        <br />
-                      </>
-                    );
-                  })}
+                  {sesiones.length > 0 ? (
+                    sesiones.map((sesion, index) => (
+                      <Accordion.Item eventKey={index} key={sesion.ID_SESIONES}>
+                        <Accordion.Header>
+                          Sesión {sesion.NUMERO_SESION}: {sesion.COMPONENTE}
+                        </Accordion.Header>
+                        <Accordion.Body>
+                          {/* Detalles de la sesión */}
+                          <a
+                              href={`./EditarSesiones/${sesion.ID_SESIONES}`}
+                              className="btn btn-outline-success"
+                            >
+                              Editar
+                            </a>
+                          <p>Fecha: {new Date(Date.parse(sesion.FECHA)).toISOString()?.split('T')[0]}</p>
+                          <p>Horario: {sesion.HORARIO}</p>
+                          <p>Estado: {sesion.ESTADO}</p>
+                          <p>Curso: {sesion.CURSO}</p>
+                          <p>Nivel: {sesion.NIVEL}</p>
+                          <p>Link: <a href={sesion.LINK} target="_blank" rel="noopener noreferrer">{sesion.LINK}</a></p>
+                          <p>ID Asistencia: {sesion.ID_ASISTENCIA}</p>
+
+                        </Accordion.Body>
+                      </Accordion.Item>
+                    ))
+                  ) : (
+                    <p>No hay sesiones disponibles.</p>
+                  )}
                 </Accordion>
               </div>
-            </Col>
+              </Col>
 
             {/*Contenidos PARTE DERECHA (TICKET....)*/}
             <Col>
@@ -151,26 +207,15 @@ function Cuerpo() {
               </Card>
               <br />
 
-              {/*Apartado de Tickets*/}
+              {/*Apartado de SlideFotos*/}
               <Card
                 style={{ width: "100%" }}
                 border="none"
                 className="text-center"
               >
                 <Card.Body>
-                  <div class=" rounded overflow-hidden shadow-lg">
-                    <div class="px-6 py-4">
-                      <div class="font-bold text-xl mb-2">
-                        ¡CREA TU TICKET AHORA!
-                      </div>
-                      <p class="text-gray-700 text-base">
-                        Comunícanos tu inconveniente, para aseguramos de que tu
-                        experiencia sea satisfactoria.
-                      </p>
-                      <button className="bg-transparent border-2 border-emerald-600 text-emerald-600 text-4xs font-bold px-5 py-3 rounded hover:scale-95">
-                        ¡CREAR TICKET!
-                      </button>
-                    </div>
+                  <div>
+                    {/*Apartado de SlideFotos NO ESTÁ EL COMPONENTE :3*/}
                   </div>
                 </Card.Body>
               </Card>
@@ -178,13 +223,13 @@ function Cuerpo() {
           </Row>
         </Col>
       </Row>
-
       {/*Parte Pie de Pagina*/}
       <Row>
         <Col>
           <Footer></Footer>
         </Col>
       </Row>
+      
     </Container>
   );
 }

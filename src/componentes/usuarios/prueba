@@ -19,19 +19,19 @@ import Footer from "../footer/footer";
 
 // Apartado tailwind
 import BotonInicio from "../Tailwind/botonInicio";
-import BotonBootcamp from "../Tailwind/botonBootcamp";
+
 import BotoneSec2 from "../Tailwind/botoneSec2";
 import BotonSec3 from "../Tailwind/botonSec3";
 import BotonAdmin from "../Tailwind/botonAdmin";
+
 function EditSession() {
   const navigate = useNavigate();
   const { id } = useParams(); // Obtener el ID de la sesión de los parámetros de la URL
-  const urlEditSession = `${"http://localhost:3001/api/sesiones"}/${id}`;
-  const urlNewSession = "http://localhost:3001/api/sesiones";
+  const url = `${"http://localhost:3001/api/sesiones"}/${id}`;
 
   const [numero_sesion, setNumero_sesion] = useState("");
   const [estado, setEstado] = useState("");
-  const [fecha, setFecha] = useState(new Date());
+  const [fecha, setFecha] = useState("");
   const [componente, setComponente] = useState("");
   const [horario, setHorario] = useState("");
   const [curso, setCurso] = useState("");
@@ -42,10 +42,9 @@ function EditSession() {
   useEffect(() => {
     const fetchSessionData = async () => {
       try {
-        if (!id) return;
         const response = await axios.get(`${"http://localhost:3001/api/sesiones"}/${id}`);
         const sessionData = response.data;
-        setFecha(new Date(Date.parse(sessionData.FECHA)).toISOString().split('T')[0]);
+        setFecha(sessionData.FECHA);
         setComponente(sessionData.COMPONENTE);
         setHorario(sessionData.HORARIO);
         setCurso(sessionData.CURSO);
@@ -77,11 +76,12 @@ function EditSession() {
     } else if (name === "link") {
       setLink(value);
     } else if (name === "estado") {
-      setEstado(value);
+      setLink(value);
     }else if (name === "numero_sesion") {
-        setNumero_sesion(value);  
+        setLink(value);  
     }
   };
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -102,21 +102,15 @@ function EditSession() {
     }
 
     try {
-      const body = {
-        NUMERO_SESION: numero_sesion,
+      const response = await axios.put(url, {
+        ID_SESION: numero_sesion, 
         FECHA: fecha,
         COMPONENTE: componente,
         HORARIO: horario,
         CURSO: curso,
         NIVEL: nivel,
         LINK: link,
-      }
-      let response;
-      if (id) {
-        response = await axios.put(urlEditSession, body);
-      } else {
-        response = await axios.post(urlNewSession, body);
-      }
+      });
 
       console.log("Respuesta del servidor:", response.data);
 
@@ -175,7 +169,7 @@ function EditSession() {
           <Row>
             <Col>
               <div className="container-fluid py-4 border rounded-3">
-                <h4>{id ? "Editar sesión" : "Crear sesión"}</h4>
+                <h4>Editar sesión</h4>
                 <br />
                 <form onSubmit={handleSubmit}>
                   <div className="flex flex-wrap -mx-3 mb-2">
@@ -188,13 +182,13 @@ function EditSession() {
                       </label>
                       <input
                         className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                        id="numero_sesion"
-                        name="numero_sesion"
+                        id="sessionId"
+                        name="sessionId"
                         type="number"
                         value={numero_sesion}
                         onChange={handleChange}
                         required
-                        placeholder="Numero de sesion"
+                        placeholder="Ingrese ID de Sesión"
                       />
                       {errors.numero_sesion && <div className="invalid-feedback">{errors.numero_sesion}</div>}
                     </div>
@@ -249,7 +243,6 @@ function EditSession() {
                       <input
                         className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                         id="horario"
-                        type="time"
                         name="horario"
                         value={horario}
                         onChange={handleChange}
@@ -324,7 +317,7 @@ function EditSession() {
                       <Link
                         type="button"
                         className="bg-red-700 text-white font-regular py-2 px-3 rounded hover:scale-95 no-underline"
-                        to={"/cuerpo"}
+                        to={"/sesiones"}
                       >
                         Cancelar
                       </Link>

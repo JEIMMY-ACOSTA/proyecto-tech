@@ -23,7 +23,6 @@ import BotonBootcamp from "../Tailwind/botonBootcamp";
 import BotoneSec2 from "../Tailwind/botoneSec2";
 import BotonSec3 from "../Tailwind/botonSec3";
 import BotonAdmin from "../Tailwind/botonAdmin";
-
 function EditUser() {
   const navigate = useNavigate();
   const { id } = useParams(); // Obtener el ID del usuario de los parámetros de la URL

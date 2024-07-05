@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 //Importamos el modulo que permite que se lea el componente para los links
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 //importamos modulos
 import Inicio from './componentes/Inicio/inicio';
 import Cuerpo from './componentes/cuerpo';
@@ -21,60 +21,64 @@ import EditarSesiones from './componentes/usuarios/editarSesiones';
 import Sesiones from './componentes/usuarios/sesiones';
 
 
-const router=createBrowserRouter(
+const router = createBrowserRouter(
   [
     {
       //Elemento LOGIN estara en esta dirección "/"
       path: "/",
-      element: <Login/> //llamamos el componente
+      element: <Login /> //llamamos el componente
     },
-    
+
     {
       path: "/inicio", //Ubicación del archivo o componente
-      element: <Inicio/>
+      element: <Inicio />
     },
 
     {
       path: "/cuerpo",
-      element: <Cuerpo/>
+      element: <Cuerpo />
     },
 
     {
       path: "/usuarios",
-      element: <Usuarios/>
+      element: <Usuarios />
     },
 
     {
       path: "/create",
-      element: <CreateNew/>
+      element: <CreateNew />
     },
 
     {
       path: "/asistencia",
-      element: <Asistencia/>
+      element: <Asistencia />
     },
 
     {
       path: "/EditUser/:id",
-      element: <EditUser/>
+      element: <EditUser />
     },
 
     {
       path: "/notas",
-      element: <Notas/>
+      element: <Notas />
     },
 
     {
       path: "/EditarNotas/:id",
-      element: <EditarNotas/>
+      element: <EditarNotas />
     },
     {
-      path: "/EditarSesiones",
-      element: <EditarSesiones/>
+      path: "/EditarSesiones/:id",
+      element: <EditarSesiones />
+    },
+    {
+      path: "/NuevaSesion",
+      element: <EditarSesiones />
     },
     {
       path: "/Sesiones",
-      element: <Sesiones/>
+      element: <Sesiones />
     },
   ]
 )
@@ -85,7 +89,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* Usamos nuestra función router, tiene que estar integrada en RouterProvider */}
-    <RouterProvider router={router}/>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 

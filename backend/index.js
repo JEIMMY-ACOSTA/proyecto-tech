@@ -59,7 +59,7 @@ const bodyParser = require('body-parser');
 const usersRouter = require('./routes/users');
 const loginRouter = require('./routes/login'); // Importar el módulo login.js
 const notasRouter = require('./routes/notas'); // Importar el módulo login.js
-
+const sesionesRouter = require('./routes/sesiones');
 
 
 const app = express();
@@ -71,7 +71,7 @@ app.use(bodyParser.json());
 app.use('/api/users', usersRouter); // Rutas para usuarios
 app.use('/api/login', loginRouter); // Rutas para iniciar sesión
 app.use('/api/notas', notasRouter); // Rutas para iniciar sesión
-
+app.use('/api/sesiones', sesionesRouter);
 
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
